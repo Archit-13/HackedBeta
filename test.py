@@ -1,4 +1,5 @@
 import sys
+import algo
 from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -51,9 +52,15 @@ def main(pdf,i):
     outfp.close()
     return
 
+
 if __name__ == '__main__':
-    x=int(input("Enter the number of pdf files to be converted :"))
-    for i in range(x):
-        pdf=raw_input("\nPlease enter the names of the pdf files : \n")
-        main(pdf,i+1)
+    #x=int(input("Enter the number of pdf files to be converted :"))
+    #for i in range(x):
+    #    pdf=raw_input("\nPlease enter the name of the pdf files : \n")
+     #   main(pdf,i+1)
+     #   algo.main('pdf'+str(i+1))
     
+    x=sys.argv[1:]
+    for i in range(len(x)):
+        main(x[i],i+1)
+        algo.main('pdf'+str(i+1))
