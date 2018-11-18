@@ -52,8 +52,8 @@ def main(pdf,i):
     return
 
 if __name__ == '__main__':
-    x=input("Enter the number of pdf files to be converted :")
+    x=int(input("Enter the number of pdf files to be converted :"))
     for i in range(x):
-        pdf=input("\nPlease enter the names of the pdf files : \n")
+        pdf=raw_input("\nPlease enter the names of the pdf files : \n")
         main(pdf,i+1)
     
