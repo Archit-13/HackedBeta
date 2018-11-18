@@ -26,3 +26,4 @@ def convert_pdf_to_txt(path):
     device.close()
     retstr.close()
     return text
+convert_pdf_to_txt(hey.pdf)

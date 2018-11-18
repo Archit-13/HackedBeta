@@ -9,7 +9,7 @@ from pdfminer.cmapdb import CMapDB
 from pdfminer.layout import LAParams
 from pdfminer.image import ImageWriter
 
-def main():
+def main(pdf,i):
     import getopt
     debug = 0
     # input option
@@ -17,7 +17,7 @@ def main():
     pagenos = set()
     maxpages = 0
     # output option
-    outfile = 'outputfile'
+    outfile = 'pdf'+str(i)
     outtype = 'text'
     imagewriter = None
     rotation = 0
@@ -28,7 +28,7 @@ def main():
     caching = True
     showpageno = True
     laparams = LAParams()
-    fname='hey.pdf'
+    fname=pdf
 
     PDFDocument.debug = debug
     PDFParser.debug = debug
@@ -52,4 +52,8 @@ def main():
     return
 
 if __name__ == '__main__':
-    sys.exit(main())
+    x=input("Enter the number of pdf files to be converted :")
+    for i in range(x):
+        pdf=input("\nPlease enter the names of the pdf files : \n")
+        main(pdf,i+1)
+    
