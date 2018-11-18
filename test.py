@@ -1,5 +1,6 @@
 import sys
 import algo
+import csv
 from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -63,4 +64,12 @@ if __name__ == '__main__':
     x=sys.argv[1:]
     for i in range(len(x)):
         main(x[i],i+1)
-        algo.main('pdf'+str(i+1))
+        results = algo.main('pdf'+str(i+1))
+        
+        
+        # Results is a List of Lists
+        #TODO Convert Results into a CSV for Analysis in Excel
+        with open('excel'+str(i+1)+'.csv', 'wb') as myfile:
+            wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+            wr.writerows(results)        
+        
