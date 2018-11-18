@@ -1,7 +1,6 @@
 import sys
 
 # need to obtain name
-ConfigFile = "pdf1"
 
 def open_file(filename):
     try:
@@ -98,7 +97,7 @@ def td_cc_process_config(lines):
                 
          
 
-def main():
+def main(ConfigFile):
     fd, ok = open_file(ConfigFile)
     List = []
     if ok:
